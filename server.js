@@ -30,34 +30,26 @@ const client = require('twilio')(accountSid, authToken);
 
 
 function resolveMessage(data) {
-  const messageTo = ''
-  console.log('resolveMessage', data.name)
+  const messageTo = {}
   switch (data.name) {
-    case 'guedes':
+    case 'guedes': {
       console.log(data)
-      // messageTo = {
-      //   name: 'guedes',
-      //   number: '5192256789',
-      //   //message: data.message
-      // }
-      //sendWhats(messageTo)
+      messageTo.name = 'guedes',
+        messageTo.number = '5192256789'
+    };
       break;
   }
-  console.log(messageTo)
-  sendWhats()
+  sendWhats(messageTo)
 }
 
 function sendWhats(messageTo) {
-  // console.log(messageTo)
   client.messages.create({
     from: 'whatsapp:+14155238886', // From a valid Twilio number
-    to: 'whatsapp:+555192256789',  // Text this number
-    body: 'olá Guedes! tem alguém o aguardando na recepção!',
+    to: 'whatsapp:+55' + messageTo.number,  // Text this number
+    body: 'olá ' + messageTo.name.toUpperCase() + '! tem alguém o aguardando na recepção!',
   })
     .then((message) => {
       return false
-
-      //console.log(message))
     })
     .catch((error) => console.log(error));
 
