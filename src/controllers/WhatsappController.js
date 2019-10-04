@@ -13,7 +13,7 @@ module.exports = {
                 client.messages.create({
                     from: 'whatsapp:+14155238886', // From a valid Twilio number
                     to: 'whatsapp:+55' + data.phone,  // Text this number
-                    body: 'olá ' + data.name.toUpperCase() + ' ' + message,
+                    body: message,
                 })
                     .then((result) => {
                         return res.json({
