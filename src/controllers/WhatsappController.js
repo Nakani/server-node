@@ -8,7 +8,6 @@ module.exports = {
         const { collaboratorName, message } = req.body
         let collaborator = await Collaborator.find(({ name: { $regex: new RegExp(collaboratorName) } }));
         if (collaborator.length <= 1) {
-            //const { name, phone } = collaborator[0]
             collaborator.map(data => {
                 client.messages.create({
                     from: 'whatsapp:+14155238886', // From a valid Twilio number
