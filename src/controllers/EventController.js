@@ -3,7 +3,8 @@ const authToken = '1e6dc24e9b8a3555e7012817d5337cb1'; //authtoken twilio
 const client = require('twilio')(accountSid, authToken);
 
 function getEventByCity(queryText){
-    console.log(queryText)
+    
+    return "Aguardando Configuração webhook :)"
 }
 
 module.exports = {
@@ -11,16 +12,17 @@ module.exports = {
         const { intent, queryText } = req.body.queryResult;
        // const hub = await Hub.find({ nameHub: nameHub });
 
+      let fulfillmentText=''
        switch (intent.displayName) {
            case "cidades":
-            getEventByCity(queryText)
+            fulfillmentText = getEventByCity(queryText)
                break;
 
        
        }
 
   return res.json({
-    fulfillmentText: "Deu certo Diogo"
+    fulfillmentText: fulfillmentText
   });
 
 
