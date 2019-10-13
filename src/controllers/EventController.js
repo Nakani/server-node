@@ -13,6 +13,13 @@ module.exports = {
                 break;
        
        }
-        return res.json(data);
+
+  return res.json({
+    speech: data,
+    displayText: data,
+    source: "chatbot service pascal"
+  });
+
+
     },
 }
