@@ -15,8 +15,8 @@ module.exports = {
        }
 
   return res.json({
-    speech: data,
-    displayText: data,
+    speech: "Deu certo Diogo",
+    displayText: "Deu certo Diogo",
     source: "chatbot service pascal"
   });
 
