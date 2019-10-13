@@ -29,5 +29,5 @@ routes.post('/collaborator-store', CollaboratorController.store);
 routes.post('/notify-whats', WhatsappController.notifyByWhats)
 
 //Uhuu
-routes.post('/event-by-city', EventController.index);
+routes.post('/events', EventController.index);
 module.exports = routes
