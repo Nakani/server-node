@@ -10,6 +10,9 @@ const HubController = require('./controllers/HubController')
 const CollaboratorController = require('./controllers/CollaboratorController')
 const WhatsappController = require('./controllers/WhatsappController')
 
+//controllers from Uhuu
+const EventController = require('./controllers/EventController')
+
 
 //GET, POST, PUT, DELETE
 //req.query =  acessar query params (para filtros)
@@ -24,4 +27,7 @@ routes.post('/sessions', SessionController.store);
 routes.post('/hubs', upload.single('background'), HubController.store);
 routes.post('/collaborator-store', CollaboratorController.store);
 routes.post('/notify-whats', WhatsappController.notifyByWhats)
+
+//Uhuu
+routes.post('/event-by-city', EventController.index);
 module.exports = routes
