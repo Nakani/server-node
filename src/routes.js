@@ -11,11 +11,6 @@ const CollaboratorController = require('./controllers/CollaboratorController')
 const WhatsappController = require('./controllers/WhatsappController')
 
 
-//GET, POST, PUT, DELETE
-//req.query =  acessar query params (para filtros)
-//req.params = Acessar route params (para edicao(put), delete)
-//req.body = Acessar corpo da requisição( para criação, edição)
-
 //GET
 routes.get('/hubs', HubController.index);
 

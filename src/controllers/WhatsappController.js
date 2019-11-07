@@ -1,5 +1,5 @@
-const accountSid = 'ACaa3511e4afa060d2674881d92c177697';
-const authToken = 'a9fd299fcdc1c971d82dee4e9cd9e024';
+const accountSid = '###AccountSid###';
+const authToken = '###AuthToken###';
 const client = require('twilio')(accountSid, authToken);
 const Collaborator = require('../models/Collaborator')
 
